@@ -4,6 +4,6 @@ import { Exception } from "./exception";
  * @public
  */
 export declare class TransactionStateError extends Exception {
-    constructor(message?: string);
+  constructor(message?: string);
 }
 //# sourceMappingURL=transaction-state-error.d.ts.map

@@ -12,9 +12,9 @@
  * @public
  */
 export declare enum SubscriptionState {
-    Initial = "Initial",
-    NotifyWait = "NotifyWait",
-    Subscribed = "Subscribed",
-    Terminated = "Terminated"
+  Initial = "Initial",
+  NotifyWait = "NotifyWait",
+  Subscribed = "Subscribed",
+  Terminated = "Terminated"
 }
 //# sourceMappingURL=subscription-state.d.ts.map

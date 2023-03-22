@@ -4,6 +4,6 @@ import { SessionDelegate } from "./session-delegate";
  * @public
  */
 export interface SessionOptions {
-    delegate?: SessionDelegate;
+  delegate?: SessionDelegate;
 }
 //# sourceMappingURL=session-options.d.ts.map

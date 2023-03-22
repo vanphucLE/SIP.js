@@ -19,17 +19,17 @@ import { URI } from "../../grammar";
  * @public
  */
 export interface DialogState {
-    id: string;
-    early: boolean;
-    callId: string;
-    localTag: string;
-    remoteTag: string;
-    localSequenceNumber: number | undefined;
-    remoteSequenceNumber: number | undefined;
-    localURI: URI;
-    remoteURI: URI;
-    remoteTarget: URI;
-    routeSet: Array<string>;
-    secure: boolean;
+  id: string;
+  early: boolean;
+  callId: string;
+  localTag: string;
+  remoteTag: string;
+  localSequenceNumber: number | undefined;
+  remoteSequenceNumber: number | undefined;
+  localURI: URI;
+  remoteURI: URI;
+  remoteTarget: URI;
+  routeSet: Array<string>;
+  secure: boolean;
 }
 //# sourceMappingURL=dialog-state.d.ts.map

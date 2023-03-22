@@ -4,6 +4,5 @@
  * That is, a Notifier sends NOTIFY requests.
  * @internal
  */
-export declare class Notifier {
-}
+export declare class Notifier {}
 //# sourceMappingURL=notifier.d.ts.map

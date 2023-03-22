@@ -8,28 +8,28 @@ import { IncomingRequestMessage } from "./incoming-request-message";
  * @public
  */
 export interface OutgoingResponse {
-    /** The outgoing message. */
-    readonly message: string;
+  /** The outgoing message. */
+  readonly message: string;
 }
 /**
  * Response options bucket.
  * @public
  */
 export interface ResponseOptions {
-    /** Status code of the response. */
-    statusCode: number;
-    /** Reason phrase of the response. */
-    reasonPhrase?: string;
-    /** To tag of the response. If not provided, one is generated. */
-    toTag?: string;
-    /** User agent string for User-Agent header. */
-    userAgent?: string;
-    /** Support options tags for Supported header. */
-    supported?: Array<string>;
-    /** Extra headers to include in the message. */
-    extraHeaders?: Array<string>;
-    /** Body to include in the message. */
-    body?: Body;
+  /** Status code of the response. */
+  statusCode: number;
+  /** Reason phrase of the response. */
+  reasonPhrase?: string;
+  /** To tag of the response. If not provided, one is generated. */
+  toTag?: string;
+  /** User agent string for User-Agent header. */
+  userAgent?: string;
+  /** Support options tags for Supported header. */
+  supported?: Array<string>;
+  /** Extra headers to include in the message. */
+  extraHeaders?: Array<string>;
+  /** Body to include in the message. */
+  body?: Body;
 }
 /**
  * When a UAS wishes to construct a response to a request, it follows
@@ -39,5 +39,8 @@ export interface ResponseOptions {
  * https://tools.ietf.org/html/rfc3261#section-8.2.6
  * @internal
  */
-export declare function constructOutgoingResponse(message: IncomingRequestMessage, options: ResponseOptions): OutgoingResponse;
+export declare function constructOutgoingResponse(
+  message: IncomingRequestMessage,
+  options: ResponseOptions
+): OutgoingResponse;
 //# sourceMappingURL=outgoing-response.d.ts.map

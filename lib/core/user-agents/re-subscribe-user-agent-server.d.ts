@@ -6,6 +6,6 @@ import { UserAgentServer } from "./user-agent-server";
  * @public
  */
 export declare class ReSubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest {
-    constructor(dialog: Dialog, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
+  constructor(dialog: Dialog, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
 //# sourceMappingURL=re-subscribe-user-agent-server.d.ts.map

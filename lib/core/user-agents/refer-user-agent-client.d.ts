@@ -6,6 +6,6 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class ReferUserAgentClient extends UserAgentClient implements OutgoingReferRequest {
-    constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
+  constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
 }
 //# sourceMappingURL=refer-user-agent-client.d.ts.map

@@ -4,6 +4,6 @@ import { Exception } from "../../core";
  * @public
  */
 export declare class ContentTypeUnsupportedError extends Exception {
-    constructor(message?: string);
+  constructor(message?: string);
 }
 //# sourceMappingURL=content-type-unsupported.d.ts.map

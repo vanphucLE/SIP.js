@@ -14,9 +14,9 @@
  * @public
  */
 export declare enum PublisherState {
-    Initial = "Initial",
-    Published = "Published",
-    Unpublished = "Unpublished",
-    Terminated = "Terminated"
+  Initial = "Initial",
+  Published = "Published",
+  Unpublished = "Unpublished",
+  Terminated = "Terminated"
 }
 //# sourceMappingURL=publisher-state.d.ts.map

@@ -4,6 +4,6 @@ import { Exception } from "./exception";
  * @public
  */
 export declare class TransportError extends Exception {
-    constructor(message?: string);
+  constructor(message?: string);
 }
 //# sourceMappingURL=transport-error.d.ts.map

@@ -7,7 +7,7 @@ import { IncomingResponseMessage } from "./incoming-response-message";
  * @public
  */
 export interface IncomingResponse {
-    /** The incoming message. */
-    readonly message: IncomingResponseMessage;
+  /** The incoming message. */
+  readonly message: IncomingResponseMessage;
 }
 //# sourceMappingURL=incoming-response.d.ts.map

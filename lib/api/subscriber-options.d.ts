@@ -4,9 +4,9 @@ import { SubscriptionOptions } from "./subscription-options";
  * @public
  */
 export interface SubscriberOptions extends SubscriptionOptions {
-    expires?: number;
-    extraHeaders?: Array<string>;
-    body?: string;
-    contentType?: string;
+  expires?: number;
+  extraHeaders?: Array<string>;
+  body?: string;
+  contentType?: string;
 }
 //# sourceMappingURL=subscriber-options.d.ts.map

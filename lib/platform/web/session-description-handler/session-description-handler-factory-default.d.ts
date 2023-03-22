@@ -8,5 +8,10 @@ import { SessionDescriptionHandlerFactory } from "./session-description-handler-
  * @param mediaStreamFactory - MediaStream factory.
  * @public
  */
-export declare function defaultSessionDescriptionHandlerFactory(mediaStreamFactory?: (constraints: MediaStreamConstraints, sessionDescriptionHandler: SessionDescriptionHandler) => Promise<MediaStream>): SessionDescriptionHandlerFactory;
+export declare function defaultSessionDescriptionHandlerFactory(
+  mediaStreamFactory?: (
+    constraints: MediaStreamConstraints,
+    sessionDescriptionHandler: SessionDescriptionHandler
+  ) => Promise<MediaStream>
+): SessionDescriptionHandlerFactory;
 //# sourceMappingURL=session-description-handler-factory-default.d.ts.map

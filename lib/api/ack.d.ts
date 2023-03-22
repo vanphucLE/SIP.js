@@ -4,10 +4,10 @@ import { IncomingRequestMessage, IncomingAckRequest } from "../core";
  * @public
  */
 export declare class Ack {
-    private incomingAckRequest;
-    /** @internal */
-    constructor(incomingAckRequest: IncomingAckRequest);
-    /** Incoming ACK request message. */
-    get request(): IncomingRequestMessage;
+  private incomingAckRequest;
+  /** @internal */
+  constructor(incomingAckRequest: IncomingAckRequest);
+  /** Incoming ACK request message. */
+  get request(): IncomingRequestMessage;
 }
 //# sourceMappingURL=ack.d.ts.map

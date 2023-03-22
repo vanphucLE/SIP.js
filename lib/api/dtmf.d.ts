@@ -6,11 +6,11 @@ import { Info } from "./info";
  * @internal
  */
 export declare class DTMF extends Info {
-    private _tone;
-    private _duration;
-    /** @internal */
-    constructor(incomingInfoRequest: IncomingInfoRequest, tone: string, duration: number);
-    get tone(): string;
-    get duration(): number;
+  private _tone;
+  private _duration;
+  /** @internal */
+  constructor(incomingInfoRequest: IncomingInfoRequest, tone: string, duration: number);
+  get tone(): string;
+  get duration(): number;
 }
 //# sourceMappingURL=dtmf.d.ts.map

@@ -16,23 +16,23 @@
  * @public
  */
 export declare enum TransportState {
-    /**
-     * The `connect()` method was called.
-     */
-    Connecting = "Connecting",
-    /**
-     * The `connect()` method resolved.
-     */
-    Connected = "Connected",
-    /**
-     * The `disconnect()` method was called.
-     */
-    Disconnecting = "Disconnecting",
-    /**
-     * The `connect()` method was rejected, or
-     * the `disconnect()` method completed, or
-     * network connectivity was lost.
-     */
-    Disconnected = "Disconnected"
+  /**
+   * The `connect()` method was called.
+   */
+  Connecting = "Connecting",
+  /**
+   * The `connect()` method resolved.
+   */
+  Connected = "Connected",
+  /**
+   * The `disconnect()` method was called.
+   */
+  Disconnecting = "Disconnecting",
+  /**
+   * The `connect()` method was rejected, or
+   * the `disconnect()` method completed, or
+   * network connectivity was lost.
+   */
+  Disconnected = "Disconnected"
 }
 //# sourceMappingURL=transport-state.d.ts.map

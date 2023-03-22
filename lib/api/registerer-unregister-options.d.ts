@@ -4,14 +4,14 @@ import { OutgoingRequestDelegate, RequestOptions } from "../core";
  * @public
  */
 export interface RegistererUnregisterOptions {
-    /**
-     * If true, unregister all contacts.
-     * @defaultValue false
-     */
-    all?: boolean;
-    /** See `core` API. */
-    requestDelegate?: OutgoingRequestDelegate;
-    /** See `core` API. */
-    requestOptions?: RequestOptions;
+  /**
+   * If true, unregister all contacts.
+   * @defaultValue false
+   */
+  all?: boolean;
+  /** See `core` API. */
+  requestDelegate?: OutgoingRequestDelegate;
+  /** See `core` API. */
+  requestOptions?: RequestOptions;
 }
 //# sourceMappingURL=registerer-unregister-options.d.ts.map

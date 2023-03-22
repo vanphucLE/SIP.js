@@ -4,6 +4,6 @@ import { Exception } from "../../core";
  * @public
  */
 export declare class SessionTerminatedError extends Exception {
-    constructor();
+  constructor();
 }
 //# sourceMappingURL=session-terminated.d.ts.map

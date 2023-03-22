@@ -6,6 +6,6 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class MessageUserAgentClient extends UserAgentClient implements OutgoingMessageRequest {
-    constructor(core: UserAgentCore, message: OutgoingRequestMessage, delegate?: OutgoingRequestDelegate);
+  constructor(core: UserAgentCore, message: OutgoingRequestMessage, delegate?: OutgoingRequestDelegate);
 }
 //# sourceMappingURL=message-user-agent-client.d.ts.map

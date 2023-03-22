@@ -13,7 +13,9 @@ export declare function stripTelephoneEvent(description: RTCSessionDescriptionIn
  * Modifier.
  * @public
  */
-export declare function cleanJitsiSdpImageattr(description: RTCSessionDescriptionInit): Promise<RTCSessionDescriptionInit>;
+export declare function cleanJitsiSdpImageattr(
+  description: RTCSessionDescriptionInit
+): Promise<RTCSessionDescriptionInit>;
 /**
  * Modifier.
  * @public

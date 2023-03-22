@@ -4,6 +4,6 @@ import { Exception } from "../../core";
  * @public
  */
 export declare class SessionDescriptionHandlerError extends Exception {
-    constructor(message?: string);
+  constructor(message?: string);
 }
 //# sourceMappingURL=session-description-handler.d.ts.map

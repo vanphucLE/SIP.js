@@ -3,8 +3,8 @@
  * @public
  */
 export interface InviterCancelOptions {
-    extraHeaders?: Array<string>;
-    reasonPhrase?: string;
-    statusCode?: number;
+  extraHeaders?: Array<string>;
+  reasonPhrase?: string;
+  statusCode?: number;
 }
 //# sourceMappingURL=inviter-cancel-options.d.ts.map

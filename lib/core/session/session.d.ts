@@ -1,4 +1,17 @@
-import { Body, OutgoingByeRequest, OutgoingInfoRequest, OutgoingInviteRequest, OutgoingInviteRequestDelegate, OutgoingMessageRequest, OutgoingNotifyRequest, OutgoingPrackRequest, OutgoingReferRequest, OutgoingRequestDelegate, RequestOptions, URI } from "../messages";
+import {
+  Body,
+  OutgoingByeRequest,
+  OutgoingInfoRequest,
+  OutgoingInviteRequest,
+  OutgoingInviteRequestDelegate,
+  OutgoingMessageRequest,
+  OutgoingNotifyRequest,
+  OutgoingPrackRequest,
+  OutgoingReferRequest,
+  OutgoingRequestDelegate,
+  RequestOptions,
+  URI
+} from "../messages";
 import { SessionDelegate } from "./session-delegate";
 /**
  * Session.
@@ -7,92 +20,92 @@ import { SessionDelegate } from "./session-delegate";
  * @public
  */
 export interface Session {
-    /** Session delegate. */
-    delegate: SessionDelegate | undefined;
-    /** The session id. Equal to callId + localTag + remoteTag. */
-    readonly id: string;
-    /** Call Id. */
-    readonly callId: string;
-    /** Local Tag. */
-    readonly localTag: string;
-    /** Local URI. */
-    readonly localURI: URI;
-    /** Remote Tag. */
-    readonly remoteTag: string;
-    /** Remote Target. */
-    readonly remoteTarget: URI;
-    /** Remote URI. */
-    readonly remoteURI: URI;
-    /** Session state. */
-    readonly sessionState: SessionState;
-    /** Current state of the offer/answer exchange. */
-    readonly signalingState: SignalingState;
-    /** The current answer if signalingState is stable. Otherwise undefined. */
-    readonly answer: Body | undefined;
-    /** The current offer if signalingState is not initial or closed. Otherwise undefined. */
-    readonly offer: Body | undefined;
-    /**
-     * Destroy session.
-     */
-    dispose(): void;
-    /**
-     * Send a BYE request.
-     * Terminating a session.
-     * https://tools.ietf.org/html/rfc3261#section-15
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    bye(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingByeRequest;
-    /**
-     * Send an INFO request.
-     * Exchange information during a session.
-     * https://tools.ietf.org/html/rfc6086#section-4.2.1
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    info(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingInfoRequest;
-    /**
-     * Send re-INVITE request.
-     * Modifying a session.
-     * https://tools.ietf.org/html/rfc3261#section-14.1
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    invite(delegate?: OutgoingInviteRequestDelegate, options?: RequestOptions): OutgoingInviteRequest;
-    /**
-     * Send MESSAGE request.
-     * Deliver a message during a session.
-     * https://tools.ietf.org/html/rfc3428#section-4
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    message(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingMessageRequest;
-    /**
-     * Send NOTIFY request.
-     * Inform referrer of transfer progress.
-     * The use of this is limited to the implicit creation of subscription by REFER (historical).
-     * Otherwise, notifiers MUST NOT create subscriptions except upon receipt of a SUBSCRIBE request.
-     * https://tools.ietf.org/html/rfc3515#section-3.7
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    notify(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingNotifyRequest;
-    /**
-     * Send PRACK request.
-     * Acknowledge a reliable provisional response.
-     * https://tools.ietf.org/html/rfc3262#section-4
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    prack(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingPrackRequest;
-    /**
-     * Send REFER request.
-     * Transfer a session.
-     * https://tools.ietf.org/html/rfc3515#section-2.4.1
-     * @param delegate - Request delegate.
-     * @param options - Options bucket.
-     */
-    refer(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingReferRequest;
+  /** Session delegate. */
+  delegate: SessionDelegate | undefined;
+  /** The session id. Equal to callId + localTag + remoteTag. */
+  readonly id: string;
+  /** Call Id. */
+  readonly callId: string;
+  /** Local Tag. */
+  readonly localTag: string;
+  /** Local URI. */
+  readonly localURI: URI;
+  /** Remote Tag. */
+  readonly remoteTag: string;
+  /** Remote Target. */
+  readonly remoteTarget: URI;
+  /** Remote URI. */
+  readonly remoteURI: URI;
+  /** Session state. */
+  readonly sessionState: SessionState;
+  /** Current state of the offer/answer exchange. */
+  readonly signalingState: SignalingState;
+  /** The current answer if signalingState is stable. Otherwise undefined. */
+  readonly answer: Body | undefined;
+  /** The current offer if signalingState is not initial or closed. Otherwise undefined. */
+  readonly offer: Body | undefined;
+  /**
+   * Destroy session.
+   */
+  dispose(): void;
+  /**
+   * Send a BYE request.
+   * Terminating a session.
+   * https://tools.ietf.org/html/rfc3261#section-15
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  bye(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingByeRequest;
+  /**
+   * Send an INFO request.
+   * Exchange information during a session.
+   * https://tools.ietf.org/html/rfc6086#section-4.2.1
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  info(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingInfoRequest;
+  /**
+   * Send re-INVITE request.
+   * Modifying a session.
+   * https://tools.ietf.org/html/rfc3261#section-14.1
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  invite(delegate?: OutgoingInviteRequestDelegate, options?: RequestOptions): OutgoingInviteRequest;
+  /**
+   * Send MESSAGE request.
+   * Deliver a message during a session.
+   * https://tools.ietf.org/html/rfc3428#section-4
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  message(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingMessageRequest;
+  /**
+   * Send NOTIFY request.
+   * Inform referrer of transfer progress.
+   * The use of this is limited to the implicit creation of subscription by REFER (historical).
+   * Otherwise, notifiers MUST NOT create subscriptions except upon receipt of a SUBSCRIBE request.
+   * https://tools.ietf.org/html/rfc3515#section-3.7
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  notify(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingNotifyRequest;
+  /**
+   * Send PRACK request.
+   * Acknowledge a reliable provisional response.
+   * https://tools.ietf.org/html/rfc3262#section-4
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  prack(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingPrackRequest;
+  /**
+   * Send REFER request.
+   * Transfer a session.
+   * https://tools.ietf.org/html/rfc3515#section-2.4.1
+   * @param delegate - Request delegate.
+   * @param options - Options bucket.
+   */
+  refer(delegate?: OutgoingRequestDelegate, options?: RequestOptions): OutgoingReferRequest;
 }
 /**
  * Session state.
@@ -101,11 +114,11 @@ export interface Session {
  * @public
  */
 export declare enum SessionState {
-    Initial = "Initial",
-    Early = "Early",
-    AckWait = "AckWait",
-    Confirmed = "Confirmed",
-    Terminated = "Terminated"
+  Initial = "Initial",
+  Early = "Early",
+  AckWait = "AckWait",
+  Confirmed = "Confirmed",
+  Terminated = "Terminated"
 }
 /**
  * Offer/Answer state.
@@ -126,10 +139,10 @@ export declare enum SessionState {
  * @public
  */
 export declare enum SignalingState {
-    Initial = "Initial",
-    HaveLocalOffer = "HaveLocalOffer",
-    HaveRemoteOffer = "HaveRemoteOffer",
-    Stable = "Stable",
-    Closed = "Closed"
+  Initial = "Initial",
+  HaveLocalOffer = "HaveLocalOffer",
+  HaveRemoteOffer = "HaveRemoteOffer",
+  Stable = "Stable",
+  Closed = "Closed"
 }
 //# sourceMappingURL=session.d.ts.map

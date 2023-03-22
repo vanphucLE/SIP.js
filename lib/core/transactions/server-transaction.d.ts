@@ -15,22 +15,28 @@ import { ServerTransactionUser } from "./transaction-user";
  * @public
  */
 export declare abstract class ServerTransaction extends Transaction {
-    private _request;
-    protected user: ServerTransactionUser;
-    protected constructor(_request: IncomingRequestMessage, transport: Transport, user: ServerTransactionUser, state: TransactionState, loggerCategory: string);
-    /** The incoming request the transaction handling. */
-    get request(): IncomingRequestMessage;
-    /**
-     * Receive incoming requests from the transport which match this transaction.
-     * @param request - The incoming request.
-     */
-    abstract receiveRequest(request: IncomingRequestMessage): void;
-    /**
-     * Receive outgoing responses to this request from the transaction user.
-     * Responses will be delivered to the transport as necessary.
-     * @param statusCode - Response status code.
-     * @param response - Response.
-     */
-    abstract receiveResponse(statusCode: number, response: string): void;
+  private _request;
+  protected user: ServerTransactionUser;
+  protected constructor(
+    _request: IncomingRequestMessage,
+    transport: Transport,
+    user: ServerTransactionUser,
+    state: TransactionState,
+    loggerCategory: string
+  );
+  /** The incoming request the transaction handling. */
+  get request(): IncomingRequestMessage;
+  /**
+   * Receive incoming requests from the transport which match this transaction.
+   * @param request - The incoming request.
+   */
+  abstract receiveRequest(request: IncomingRequestMessage): void;
+  /**
+   * Receive outgoing responses to this request from the transaction user.
+   * Responses will be delivered to the transport as necessary.
+   * @param statusCode - Response status code.
+   * @param response - Response.
+   */
+  abstract receiveResponse(statusCode: number, response: string): void;
 }
 //# sourceMappingURL=server-transaction.d.ts.map

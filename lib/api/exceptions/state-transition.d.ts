@@ -4,6 +4,6 @@ import { Exception } from "../../core";
  * @public
  */
 export declare class StateTransitionError extends Exception {
-    constructor(message?: string);
+  constructor(message?: string);
 }
 //# sourceMappingURL=state-transition.d.ts.map

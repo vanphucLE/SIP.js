@@ -5,7 +5,7 @@ import { IncomingMessage } from "./incoming-message";
  * @public
  */
 export declare class IncomingRequestMessage extends IncomingMessage {
-    ruri: URI | undefined;
-    constructor();
+  ruri: URI | undefined;
+  constructor();
 }
 //# sourceMappingURL=incoming-request-message.d.ts.map

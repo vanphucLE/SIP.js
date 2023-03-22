@@ -6,7 +6,7 @@ import { UserAgentServer } from "./user-agent-server";
  * @public
  */
 export declare class SubscribeUserAgentServer extends UserAgentServer implements IncomingSubscribeRequest {
-    protected core: UserAgentCore;
-    constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
+  protected core: UserAgentCore;
+  constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
 //# sourceMappingURL=subscribe-user-agent-server.d.ts.map

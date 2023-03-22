@@ -4,6 +4,6 @@ import { SubscriptionDelegate } from "./subscription-delegate";
  * @public
  */
 export interface SubscriptionOptions {
-    delegate?: SubscriptionDelegate;
+  delegate?: SubscriptionDelegate;
 }
 //# sourceMappingURL=subscription-options.d.ts.map

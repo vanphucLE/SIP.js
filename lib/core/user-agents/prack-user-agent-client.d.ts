@@ -6,6 +6,6 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class PrackUserAgentClient extends UserAgentClient implements OutgoingPrackRequest {
-    constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
+  constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
 }
 //# sourceMappingURL=prack-user-agent-client.d.ts.map

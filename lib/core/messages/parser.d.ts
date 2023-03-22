@@ -6,10 +6,17 @@ import { IncomingResponseMessage } from "./incoming-response-message";
  * @internal
  */
 export declare namespace Parser {
-    function getHeader(data: any, headerStart: number): number;
-    function parseHeader(message: IncomingRequestMessage | IncomingResponseMessage, data: any, headerStart: number, headerEnd: number): boolean | {
+  function getHeader(data: any, headerStart: number): number;
+  function parseHeader(
+    message: IncomingRequestMessage | IncomingResponseMessage,
+    data: any,
+    headerStart: number,
+    headerEnd: number
+  ):
+    | boolean
+    | {
         error: string;
-    };
-    function parseMessage(data: string, logger: Logger): IncomingRequestMessage | IncomingResponseMessage | undefined;
+      };
+  function parseMessage(data: string, logger: Logger): IncomingRequestMessage | IncomingResponseMessage | undefined;
 }
 //# sourceMappingURL=parser.d.ts.map

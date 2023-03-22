@@ -4,9 +4,9 @@ import { OutgoingRequestDelegate, RequestOptions } from "../core";
  * @public
  */
 export interface RegistererRegisterOptions {
-    /** See `core` API. */
-    requestDelegate?: OutgoingRequestDelegate;
-    /** See `core` API. */
-    requestOptions?: RequestOptions;
+  /** See `core` API. */
+  requestDelegate?: OutgoingRequestDelegate;
+  /** See `core` API. */
+  requestOptions?: RequestOptions;
 }
 //# sourceMappingURL=registerer-register-options.d.ts.map

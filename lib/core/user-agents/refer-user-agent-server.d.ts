@@ -7,11 +7,15 @@ import { UserAgentServer } from "./user-agent-server";
  * @public
  */
 export declare class ReferUserAgentServer extends UserAgentServer implements IncomingReferRequest {
-    /**
-     * REFER UAS constructor.
-     * @param dialogOrCore - Dialog for in dialog REFER, UserAgentCore for out of dialog REFER.
-     * @param message - Incoming REFER request message.
-     */
-    constructor(dialogOrCore: SessionDialog | UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
+  /**
+   * REFER UAS constructor.
+   * @param dialogOrCore - Dialog for in dialog REFER, UserAgentCore for out of dialog REFER.
+   * @param message - Incoming REFER request message.
+   */
+  constructor(
+    dialogOrCore: SessionDialog | UserAgentCore,
+    message: IncomingRequestMessage,
+    delegate?: IncomingRequestDelegate
+  );
 }
 //# sourceMappingURL=refer-user-agent-server.d.ts.map

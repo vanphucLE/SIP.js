@@ -4,9 +4,9 @@ import { OutgoingRequestDelegate, RequestOptions } from "../core";
  * @public
  */
 export interface SessionInfoOptions {
-    /** See `core` API. */
-    requestDelegate?: OutgoingRequestDelegate;
-    /** See `core` API. */
-    requestOptions?: RequestOptions;
+  /** See `core` API. */
+  requestDelegate?: OutgoingRequestDelegate;
+  /** See `core` API. */
+  requestOptions?: RequestOptions;
 }
 //# sourceMappingURL=session-info-options.d.ts.map

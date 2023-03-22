@@ -11,22 +11,22 @@
  * @public
  */
 export interface Transport {
-    /**
-     * The transport protocol.
-     *
-     * @remarks
-     * Formatted as defined for the Via header sent-protocol transport.
-     * https://tools.ietf.org/html/rfc3261#section-20.42
-     */
-    readonly protocol: string;
-    /**
-     * Send a message.
-     *
-     * @remarks
-     * Resolves once message is sent. Otherwise rejects with an Error.
-     *
-     * @param message - Message to send.
-     */
-    send(message: string): Promise<void>;
+  /**
+   * The transport protocol.
+   *
+   * @remarks
+   * Formatted as defined for the Via header sent-protocol transport.
+   * https://tools.ietf.org/html/rfc3261#section-20.42
+   */
+  readonly protocol: string;
+  /**
+   * Send a message.
+   *
+   * @remarks
+   * Resolves once message is sent. Otherwise rejects with an Error.
+   *
+   * @param message - Message to send.
+   */
+  send(message: string): Promise<void>;
 }
 //# sourceMappingURL=transport.d.ts.map

@@ -6,6 +6,6 @@ import { UserAgentServer } from "./user-agent-server";
  * @public
  */
 export declare class MessageUserAgentServer extends UserAgentServer implements IncomingMessageRequest {
-    constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
+  constructor(core: UserAgentCore, message: IncomingRequestMessage, delegate?: IncomingRequestDelegate);
 }
 //# sourceMappingURL=message-user-agent-server.d.ts.map

@@ -43,53 +43,53 @@ import { UserAgent } from "./user-agent";
  * @public
  */
 export declare class Subscriber extends Subscription {
-    private id;
-    private body;
-    private event;
-    private expires;
-    private extraHeaders;
-    private logger;
-    private outgoingRequestMessage;
-    private retryAfterTimer;
-    private subscriberRequest;
-    private targetURI;
-    /**
-     * Constructor.
-     * @param userAgent - User agent. See {@link UserAgent} for details.
-     * @param targetURI - The request URI identifying the subscribed event.
-     * @param eventType - The event type identifying the subscribed event.
-     * @param options - Options bucket. See {@link SubscriberOptions} for details.
-     */
-    constructor(userAgent: UserAgent, targetURI: URI, eventType: string, options?: SubscriberOptions);
-    /**
-     * Destructor.
-     * @internal
-     */
-    dispose(): Promise<void>;
-    /**
-     * Subscribe to event notifications.
-     *
-     * @remarks
-     * Send an initial SUBSCRIBE request if no subscription as been established.
-     * Sends a re-SUBSCRIBE request if the subscription is "active".
-     */
-    subscribe(options?: SubscriberSubscribeOptions): Promise<void>;
-    /**
-     * {@inheritDoc Subscription.unsubscribe}
-     */
-    unsubscribe(options?: SubscriptionUnsubscribeOptions): Promise<void>;
-    /**
-     * Sends a re-SUBSCRIBE request if the subscription is "active".
-     * @deprecated Use `subscribe` instead.
-     * @internal
-     */
-    _refresh(): Promise<void>;
-    /** @internal */
-    protected onAccepted(response: IncomingResponse): void;
-    /** @internal */
-    protected onNotify(request: IncomingNotifyRequest): void;
-    /** @internal */
-    protected onRefresh(request: OutgoingSubscribeRequest): void;
-    private initSubscriberRequest;
+  private id;
+  private body;
+  private event;
+  private expires;
+  private extraHeaders;
+  private logger;
+  private outgoingRequestMessage;
+  private retryAfterTimer;
+  private subscriberRequest;
+  private targetURI;
+  /**
+   * Constructor.
+   * @param userAgent - User agent. See {@link UserAgent} for details.
+   * @param targetURI - The request URI identifying the subscribed event.
+   * @param eventType - The event type identifying the subscribed event.
+   * @param options - Options bucket. See {@link SubscriberOptions} for details.
+   */
+  constructor(userAgent: UserAgent, targetURI: URI, eventType: string, options?: SubscriberOptions);
+  /**
+   * Destructor.
+   * @internal
+   */
+  dispose(): Promise<void>;
+  /**
+   * Subscribe to event notifications.
+   *
+   * @remarks
+   * Send an initial SUBSCRIBE request if no subscription as been established.
+   * Sends a re-SUBSCRIBE request if the subscription is "active".
+   */
+  subscribe(options?: SubscriberSubscribeOptions): Promise<void>;
+  /**
+   * {@inheritDoc Subscription.unsubscribe}
+   */
+  unsubscribe(options?: SubscriptionUnsubscribeOptions): Promise<void>;
+  /**
+   * Sends a re-SUBSCRIBE request if the subscription is "active".
+   * @deprecated Use `subscribe` instead.
+   * @internal
+   */
+  _refresh(): Promise<void>;
+  /** @internal */
+  protected onAccepted(response: IncomingResponse): void;
+  /** @internal */
+  protected onNotify(request: IncomingNotifyRequest): void;
+  /** @internal */
+  protected onRefresh(request: OutgoingSubscribeRequest): void;
+  private initSubscriberRequest;
 }
 //# sourceMappingURL=subscriber.d.ts.map

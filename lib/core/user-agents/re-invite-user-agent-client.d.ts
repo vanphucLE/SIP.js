@@ -1,5 +1,10 @@
 import { SessionDialog } from "../dialogs";
-import { IncomingResponseMessage, OutgoingInviteRequest, OutgoingInviteRequestDelegate, RequestOptions } from "../messages";
+import {
+  IncomingResponseMessage,
+  OutgoingInviteRequest,
+  OutgoingInviteRequestDelegate,
+  RequestOptions
+} from "../messages";
 import { UserAgentClient } from "./user-agent-client";
 /**
  * Re-INVITE UAC.
@@ -11,9 +16,9 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class ReInviteUserAgentClient extends UserAgentClient implements OutgoingInviteRequest {
-    delegate: OutgoingInviteRequestDelegate | undefined;
-    private dialog;
-    constructor(dialog: SessionDialog, delegate?: OutgoingInviteRequestDelegate, options?: RequestOptions);
-    protected receiveResponse(message: IncomingResponseMessage): void;
+  delegate: OutgoingInviteRequestDelegate | undefined;
+  private dialog;
+  constructor(dialog: SessionDialog, delegate?: OutgoingInviteRequestDelegate, options?: RequestOptions);
+  protected receiveResponse(message: IncomingResponseMessage): void;
 }
 //# sourceMappingURL=re-invite-user-agent-client.d.ts.map

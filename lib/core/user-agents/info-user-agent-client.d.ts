@@ -6,6 +6,6 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class InfoUserAgentClient extends UserAgentClient implements OutgoingInfoRequest {
-    constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
+  constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
 }
 //# sourceMappingURL=info-user-agent-client.d.ts.map

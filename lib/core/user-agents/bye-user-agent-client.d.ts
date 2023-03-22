@@ -6,6 +6,6 @@ import { UserAgentClient } from "./user-agent-client";
  * @public
  */
 export declare class ByeUserAgentClient extends UserAgentClient implements OutgoingByeRequest {
-    constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
+  constructor(dialog: SessionDialog, delegate?: OutgoingRequestDelegate, options?: RequestOptions);
 }
 //# sourceMappingURL=bye-user-agent-client.d.ts.map
