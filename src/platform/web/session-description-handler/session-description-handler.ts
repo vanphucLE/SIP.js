@@ -543,7 +543,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     let stream = new MediaStream();
 
     rawstream.getTracks().forEach((track) => {
-      console.log(">>>> Media Stream track is", track);
+      console.log("[Pb Logs] Media Stream track is", track);
     });
 
     // @ts-ignore
