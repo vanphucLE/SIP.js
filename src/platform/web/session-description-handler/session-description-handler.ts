@@ -9,6 +9,9 @@ import { SessionDescriptionHandlerConfiguration } from "./session-description-ha
 import { SessionDescriptionHandlerOptions } from "./session-description-handler-options.js";
 import { PeerConnectionDelegate } from "./peer-connection-delegate.js";
 
+// @ts-ignore
+import { processor } from "../processVideo.js";
+
 type ResolveFunction = () => void;
 type RejectFunction = (reason: Error) => void;
 
@@ -27,6 +30,8 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
   protected mediaStreamFactory: MediaStreamFactory;
   /** Configuration options. */
   protected sessionDescriptionHandlerConfiguration?: SessionDescriptionHandlerConfiguration;
+
+  protected rawMediaStream: MediaStream;
 
   /** The local media stream. */
   protected _localMediaStream: MediaStream;
@@ -61,6 +66,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     this.logger = logger;
     this.mediaStreamFactory = mediaStreamFactory;
     this.sessionDescriptionHandlerConfiguration = sessionDescriptionHandlerConfiguration;
+    this.rawMediaStream = new MediaStream();
     this._localMediaStream = new MediaStream();
     this._remoteMediaStream = new MediaStream();
     this._peerConnection = new RTCPeerConnection(sessionDescriptionHandlerConfiguration?.peerConnectionConfiguration);
@@ -194,6 +200,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     if (this._peerConnection === undefined) {
       return;
     }
+    this.rawMediaStream.getTracks().forEach((track) => track.stop());
     this._peerConnection.getReceivers().forEach((receiver) => {
       receiver.track && receiver.track.stop();
     });
@@ -516,7 +523,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
 
     this.localMediaStreamConstraints = constraints;
     return this.mediaStreamFactory(constraints, this, options).then((mediaStream) =>
-      this.setLocalMediaStream(mediaStream)
+      this.setLocalMediaStream(mediaStream, options)
     );
   }
 
@@ -529,8 +536,27 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
    *
    * @param stream - Media stream containing tracks to be utilized.
    */
-  protected setLocalMediaStream(stream: MediaStream): Promise<void> {
+  protected setLocalMediaStream(rawstream: MediaStream, options: any): Promise<void> {
     this.logger.debug("SessionDescriptionHandler.setLocalMediaStream");
+    this.rawMediaStream = rawstream;
+
+    let stream = new MediaStream();
+
+    rawstream.getTracks().forEach((track) => {
+      console.log("[Pb Logs] Media Stream track is", track);
+    });
+
+    // @ts-ignore
+    if (
+      rawstream.getAudioTracks().length === 0 &&
+      options.constraints.video &&
+      options.constraints.video !== "screen"
+    ) {
+      processor.addVideo(rawstream);
+      stream = processor.result();
+    } else {
+      stream = rawstream;
+    }
 
     if (!this._peerConnection) {
       throw new Error("Peer connection undefined.");
@@ -787,13 +813,13 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
           const directionToOffer = (currentDirection: RTCRtpTransceiverDirection): RTCRtpTransceiverDirection => {
             switch (currentDirection) {
               case "inactive":
-                return options?.hold ? "inactive" : "recvonly";
+                return options?.streaming ? "inactive" : "recvonly";
               case "recvonly":
-                return options?.hold ? "inactive" : "recvonly";
+                return options?.streaming ? "inactive" : "recvonly";
               case "sendonly":
-                return options?.hold ? "sendonly" : "sendrecv";
+                return options?.streaming ? "sendonly" : "sendrecv";
               case "sendrecv":
-                return options?.hold ? "sendonly" : "sendrecv";
+                return options?.streaming ? "sendonly" : "sendrecv";
               case "stopped":
                 return "stopped";
               default:
