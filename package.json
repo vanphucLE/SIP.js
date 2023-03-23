@@ -1,5 +1,5 @@
 {
-  "name": "@pb/sip.js",
+  "name": "@phucle/sip.js",
   "title": "SIP.js",
   "description": "A SIP library for JavaScript",
   "version": "0.21.2",
