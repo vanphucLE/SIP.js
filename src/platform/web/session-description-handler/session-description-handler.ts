@@ -10,7 +10,7 @@ import { SessionDescriptionHandlerOptions } from "./session-description-handler-
 import { PeerConnectionDelegate } from "./peer-connection-delegate.js";
 
 // @ts-ignore
-import {processor} from '../processVideo.js';
+import { processor } from "../processVideo.js";
 
 type ResolveFunction = () => void;
 type RejectFunction = (reason: Error) => void;
@@ -200,7 +200,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     if (this._peerConnection === undefined) {
       return;
     }
-    this.rawMediaStream.getTracks().forEach((track) => track.stop())
+    this.rawMediaStream.getTracks().forEach((track) => track.stop());
     this._peerConnection.getReceivers().forEach((receiver) => {
       receiver.track && receiver.track.stop();
     });
@@ -543,7 +543,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     let stream = new MediaStream();
 
     rawstream.getTracks().forEach((track) => {
-      console.log("Tri------Media Stream track is", track);
+      console.log(">>>> Media Stream track is", track);
     });
 
     // @ts-ignore
