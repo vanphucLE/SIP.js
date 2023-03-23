@@ -9,8 +9,7 @@ import { SessionDescriptionHandlerConfiguration } from "./session-description-ha
 import { SessionDescriptionHandlerOptions } from "./session-description-handler-options.js";
 import { PeerConnectionDelegate } from "./peer-connection-delegate.js";
 
-// @ts-ignore
-import { processor } from "../processVideo.js";
+import processor from "../processVideo.js";
 
 type ResolveFunction = () => void;
 type RejectFunction = (reason: Error) => void;
@@ -546,7 +545,6 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
       console.log("[Pb Logs] Media Stream track is", track);
     });
 
-    // @ts-ignore
     if (
       rawstream.getAudioTracks().length === 0 &&
       options.constraints.video &&
