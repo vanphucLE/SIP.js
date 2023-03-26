@@ -1,7 +1,7 @@
 import * as bodyPix from "@tensorflow-models/body-pix";
 import "@tensorflow/tfjs";
 
-class blurBackground {
+export class BlurBackground {
   net: any = null;
   loadedVideo = false;
   rawVideo: any = null;
@@ -77,7 +77,3 @@ class blurBackground {
     }
   }
 }
-
-const processor = new blurBackground();
-
-export default processor;

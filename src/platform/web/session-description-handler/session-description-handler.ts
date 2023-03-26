@@ -9,7 +9,7 @@ import { SessionDescriptionHandlerConfiguration } from "./session-description-ha
 import { SessionDescriptionHandlerOptions } from "./session-description-handler-options.js";
 import { PeerConnectionDelegate } from "./peer-connection-delegate.js";
 
-import processor from "../processVideo.js";
+import { BlurBackground } from "../../../api/processVideo.js";
 
 type ResolveFunction = () => void;
 type RejectFunction = (reason: Error) => void;
@@ -43,6 +43,8 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
   /** The peer connection delegate. */
   protected _peerConnectionDelegate: PeerConnectionDelegate | undefined;
 
+  protected _processor: BlurBackground | undefined;
+
   private iceGatheringCompletePromise: Promise<void> | undefined;
   private iceGatheringCompleteTimeoutId: number | undefined;
   private iceGatheringCompleteResolve: ResolveFunction | undefined;
@@ -69,6 +71,7 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     this._localMediaStream = new MediaStream();
     this._remoteMediaStream = new MediaStream();
     this._peerConnection = new RTCPeerConnection(sessionDescriptionHandlerConfiguration?.peerConnectionConfiguration);
+    this._processor = sessionDescriptionHandlerConfiguration?.processor;
     this.initPeerConnectionEventHandlers();
   }
 
@@ -546,12 +549,13 @@ export class SessionDescriptionHandler implements SessionDescriptionHandlerDefin
     });
 
     if (
+      this._processor &&
       rawstream.getAudioTracks().length === 0 &&
       options.constraints.video &&
       options.constraints.video !== "screen"
     ) {
-      processor.addVideo(rawstream);
-      stream = processor.result();
+      this._processor.addVideo(rawstream);
+      stream = this._processor.result();
     } else {
       stream = rawstream;
     }

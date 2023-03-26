@@ -1,3 +1,5 @@
+import { BlurBackground } from "../../../api/processVideo.js";
+
 /**
  * Configuration for SessionDescriptionHandler.
  * @public
@@ -14,4 +16,9 @@ export interface SessionDescriptionHandlerConfiguration {
    * Peer connection options.
    */
   peerConnectionConfiguration?: RTCConfiguration;
+
+  /**
+   * processor options.
+   */
+  processor?: BlurBackground;
 }
