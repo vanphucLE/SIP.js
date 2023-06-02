@@ -5,7 +5,5 @@
     "declarationMap": true,
     "outDir": "../lib"
   },
-  "include": [
-    "./"
-  ]
+  "include": ["./"]
 }
