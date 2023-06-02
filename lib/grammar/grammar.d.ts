@@ -14,6 +14,7 @@ export declare namespace Grammar {
   /**
    * Parse the given string and returns a SIP.NameAddrHeader instance or undefined if
    * it is an invalid NameAddrHeader.
+   *
    * @param name_addr_header -
    */
   function nameAddrHeaderParse(nameAddrHeader: string): NameAddrHeader | undefined;

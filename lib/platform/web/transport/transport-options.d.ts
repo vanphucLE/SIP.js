@@ -7,6 +7,7 @@ export interface TransportOptions {
    * URL of WebSocket server to connect with. For example, "wss://localhost:8080".
    */
   server: string;
+  token: string;
   /**
    * Seconds to wait for WebSocket to connect before giving up.
    * @defaultValue `5`
