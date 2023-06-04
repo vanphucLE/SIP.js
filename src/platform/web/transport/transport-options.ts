@@ -8,6 +8,7 @@ export interface TransportOptions {
    */
   server: string;
 
+  token: string;
   /**
    * Seconds to wait for WebSocket to connect before giving up.
    * @defaultValue `5`
