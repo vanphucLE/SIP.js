@@ -377,6 +377,7 @@ export class Registerer {
         let contact: NameAddrHeader | undefined;
         while (contacts--) {
           contact = response.message.parseHeader("contact", contacts);
+          console.log('Tri-----Contact is', contact);
           if (!contact) {
             throw new Error("Contact undefined");
           }
