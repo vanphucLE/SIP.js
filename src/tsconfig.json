@@ -4,9 +4,8 @@
     "sourceMap": false,
     "declaration": true,
     "declarationMap": false,
-    "outDir": "../lib"
+    "outDir": "../lib",
+    "skipLibCheck": true
   },
-  "include": [
-    "./"
-  ]
+  "include": ["./"]
 }

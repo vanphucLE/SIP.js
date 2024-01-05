@@ -13,6 +13,7 @@ import { TransportOptions } from "./transport-options.js";
 export class Transport implements TransportDefinition {
   private static defaultOptions: Required<TransportOptions> = {
     server: "",
+    token: "",
     connectionTimeout: 5,
     keepAliveInterval: 0,
     keepAliveDebounce: 10,
@@ -123,6 +124,10 @@ export class Transport implements TransportDefinition {
    */
   public get server(): string {
     return this.configuration.server;
+  }
+
+  public get token(): string {
+    return this.configuration.token;
   }
 
   /**
@@ -252,7 +257,7 @@ export class Transport implements TransportDefinition {
     try {
       // WebSocket()
       // https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/WebSocket
-      ws = new WebSocket(this.server, "sip");
+      ws = this.token ? new WebSocket(this.server, ["sip", this.token]) : new WebSocket(this.server, "sip");
       ws.binaryType = "arraybuffer"; // set data type of received binary messages
       ws.addEventListener("close", (ev: CloseEvent) => this.onWebSocketClose(ev, ws));
       ws.addEventListener("error", (ev: Event) => this.onWebSocketError(ev, ws));

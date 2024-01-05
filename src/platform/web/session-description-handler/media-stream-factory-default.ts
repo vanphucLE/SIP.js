@@ -5,10 +5,13 @@ import { MediaStreamFactory } from "./media-stream-factory.js";
  * @public
  */
 export function defaultMediaStreamFactory(): MediaStreamFactory {
-  return (constraints: MediaStreamConstraints): Promise<MediaStream> => {
+  return (constraints): Promise<MediaStream> => {
     // if no audio or video, return a media stream without tracks
     if (!constraints.audio && !constraints.video) {
       return Promise.resolve(new MediaStream());
+    }
+    if (constraints.video === "screen") {
+      return navigator.mediaDevices.getDisplayMedia(constraints.constraints);
     }
     // getUserMedia() is a powerful feature which can only be used in secure contexts; in insecure contexts,
     // navigator.mediaDevices is undefined, preventing access to getUserMedia(). A secure context is, in short,

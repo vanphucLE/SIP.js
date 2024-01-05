@@ -35,7 +35,8 @@ export function defaultSessionDescriptionHandlerFactory(
       peerConnectionConfiguration: {
         ...defaultPeerConnectionConfiguration(),
         ...options?.peerConnectionConfiguration
-      }
+      },
+      processor: options?.processor
     };
 
     const logger = session.userAgent.getLogger("sip.SessionDescriptionHandler");

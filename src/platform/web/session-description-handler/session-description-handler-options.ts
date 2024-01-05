@@ -33,6 +33,8 @@ export interface SessionDescriptionHandlerOptions extends SessionDescriptionHand
    */
   dataChannelOptions?: RTCDataChannelInit;
 
+  streaming?: boolean;
+
   /**
    * If true, offer and answer directions will be set to place peer on hold.
    */
